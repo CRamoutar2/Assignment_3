@@ -2,13 +2,30 @@ let numRows = 0;
 let numCols = 0;
 let colorSelected; 
 
+const contain = document.getElementById("contain");
+let rows = document.getElementsByClassName("gridRows");
+let cells = document.getElementsByClassName("gridCells");
 //Add a row
 function addR() {
+    numRows++;
+    if(numCols ===0){
+        addC();
+    }
+    let row = document.createElement("div");
     alert("Clicked Add Row")
+    contain.appendChild(row).className = "gridRows";
 }
 //Add a column
 function addC() {
+    numCols++;
+    if(numRows === 0){
+        addR();
+    }
     alert("Clicked Add Col")
+    for(let i = 0; i < numRows; i++){
+        let cell = document.createElement("div");
+        rows[i].appendChild(cell).className = "gridCells";
+    }
 }
 
 //Remove a row
