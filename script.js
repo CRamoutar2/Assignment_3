@@ -10,7 +10,6 @@ let cells = document.getElementsByClassName("gridCells");
 function addR() {
     numRows++;
     let row = document.createElement("tr");
-    console.log("Clicked Add Row");
     grid.appendChild(row).className = "gridRows";
     if (numCols === 1) {
         for (let i = 0; i < numCols; i++) {
@@ -29,7 +28,6 @@ function addR() {
 
 //Add a column
 function addC() {
-    console.log(numCols);
     if (numRows === 0){
         addR();
     }
@@ -67,7 +65,6 @@ function removeC() {
 //sets global var for selected color
 function selected(){
     colorSelected = document.getElementById("selectedID").value;
-    console.log(colorSelected);
 }
 
 // fills all cells with selected color
@@ -75,14 +72,11 @@ function fillAll(){
     let cellCount = document.querySelectorAll(".gridCells").length;
     for (let i = 0; i < cellCount; i++) {
         cells[i].style.backgroundColor = colorSelected;
-        console.log(cells[i])
     }
-    console.log("Clicked Fill All")
 }
 
 function fillOne() {
     let cellCount = document.querySelectorAll(".gridCells").length;
-    console.log(cellCount)
     for (i = 0; i < cellCount; i++) {
         cells[i].addEventListener('click', function(e) {
             e.target.style.backgroundColor = colorSelected;
@@ -105,5 +99,4 @@ function fillU(){
             cells[i].style.backgroundColor = colorSelected;
         }
     }
-    console.log("Clicked Fill All Uncolored")
 }
