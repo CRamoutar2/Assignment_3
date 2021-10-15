@@ -11,11 +11,8 @@ function addR() {
     numRows++;
     let row = document.createElement("tr");
     grid.appendChild(row).className = "gridRows";
-    if (numCols === 1) {
-        for (let i = 0; i < numCols; i++) {
-            let cell = document.createElement("th");
-            grid.lastChild.appendChild(cell).className = "gridCells";
-        }
+    if (numCols === 0) {
+        addC();
     }
     else {
         for (let i = 0; i < numCols; i++) {
