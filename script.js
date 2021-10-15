@@ -11,11 +11,8 @@ function addR() {
     numRows++;
     let row = document.createElement("tr");
     grid.appendChild(row).className = "gridRows";
-    if (numCols === 1) {
-        for (let i = 0; i < numCols; i++) {
-            let cell = document.createElement("th");
-            grid.lastChild.appendChild(cell).className = "gridCells";
-        }
+    if (numCols === 0) {
+        addC();
     }
     else {
         for (let i = 0; i < numCols; i++) {
@@ -42,6 +39,13 @@ function addC() {
 
 //Remove a row
 function removeR() {
+    if (numRows === 1)
+    {
+        while (numCols> 0)
+        {
+            removeC();
+        }
+    }
     if (numRows != 0)
     {
         console.log("Clicked Remove Row");
@@ -52,6 +56,13 @@ function removeR() {
 
 //Remove a column
 function removeC() {
+    if (numCols === 1)
+    {
+        while (numRows > 1)
+        {
+            removeR();
+        }
+    }
     if (numCols != 0 && numRows !=0)
     {
         console.log("Clicked Remove Col");
@@ -59,7 +70,9 @@ function removeC() {
             rows[i].removeChild(rows[i].lastChild);
         }
         numCols--;
-    }
+    } 
+    if (numCols === 0)
+        removeR();
 }
 
 //sets global var for selected color
