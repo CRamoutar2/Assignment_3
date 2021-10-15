@@ -32,11 +32,10 @@ function addC() {
     console.log(numCols);
     if (numRows === 0){
         addR();
-        console.log("row add");
     }
     else {
         numCols++;
-        for(let i = 0; i < numCols; i++){
+        for(let i = 0; i < numRows; i++){
             let cell = document.createElement("th");
             rows[i].appendChild(cell).className = "gridCells";
         }
@@ -55,6 +54,7 @@ function removeC() {
     console.log("Clicked Remove Col");
     for (let i = 0; i < numRows; i++) {
         grid.rows[i].removeChild(select.lastChild);
+        // grid.rows[i].removeChild(rows[i].lastChild);
     }
     numCols--;
 }
