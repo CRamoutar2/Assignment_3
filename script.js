@@ -85,9 +85,19 @@ function fillOne() {
 }
 
 function clearAll(){
+    let cellCount = document.querySelectorAll(".gridCells").length;
+    for (let i = 0; i < cellCount; i++) {
+        cells[i].style.backgroundColor = "";
+    }
     console.log("Clicked Clear All")
 }
 
 function fillU(){
+    let cellCount = document.querySelectorAll(".gridCells").length;
+    for(let i = 0; i < cellCount; i++){
+        if(cells[i].style.backgroundColor === ""){
+            cells[i].style.backgroundColor = colorSelected;
+        }
+    }
     console.log("Clicked Fill All Uncolored")
 }
