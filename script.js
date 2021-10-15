@@ -2,19 +2,21 @@ let numRows = 0;
 let numCols = 0;
 let colorSelected; 
 
-const contain = document.getElementById("contain");
+const grid = document.getElementById("grid");
 let rows = document.getElementsByClassName("gridRows");
 let cells = document.getElementsByClassName("gridCells");
+
 //Add a row
 function addR() {
     numRows++;
-    if(numCols ===0){
+    if(numCols === 0){
         addC();
     }
-    let row = document.createElement("div");
+    let row = document.createElement("tr");
     alert("Clicked Add Row")
-    contain.appendChild(row).className = "gridRows";
+    grid.appendChild(row).className = "gridRows";
 }
+
 //Add a column
 function addC() {
     numCols++;
@@ -23,7 +25,7 @@ function addC() {
     }
     alert("Clicked Add Col")
     for(let i = 0; i < numRows; i++){
-        let cell = document.createElement("div");
+        let cell = document.createElement("th");
         rows[i].appendChild(cell).className = "gridCells";
     }
 }
@@ -32,10 +34,12 @@ function addC() {
 function removeR() {
     alert("Clicked Remove Row")
 }
+
 //Remove a column
 function removeC() {
     alert("Clicked Remove Col")
 }
+
 //sets global var for selected color
 function selected(){
     colorSelected = document.getElementById("selectedID").value;
