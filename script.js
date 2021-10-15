@@ -52,7 +52,7 @@ function removeR() {
 
 //Remove a column
 function removeC() {
-    if (numCOls != 0)
+    if (numCols != 0)
     {
         console.log("Clicked Remove Col");
         for (let i = 0; i < numRows; i++) {
