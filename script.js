@@ -51,7 +51,11 @@ function removeR() {
 
 //Remove a column
 function removeC() {
-    console.log("Clicked Remove Col")
+    console.log("Clicked Remove Col");
+    for (let i = 0; i < numRows; i++) {
+        rows[i].removeChild(select.lastChild);
+    }
+    numCols--;
 }
 
 //sets global var for selected color
