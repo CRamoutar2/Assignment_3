@@ -64,12 +64,24 @@ function selected(){
     console.log(colorSelected);
 }
 
-function fill(){
+// fills all cells with selected color
+function fillAll(){
     let cellCount = document.querySelectorAll(".gridCells").length;
     for (let i = 0; i < cellCount; i++) {
         cells[i].style.backgroundColor = colorSelected;
+        console.log(cells[i])
     }
     console.log("Clicked Fill All")
+}
+
+function fillOne() {
+    let cellCount = document.querySelectorAll(".gridCells").length;
+    console.log(cellCount)
+    for (i = 0; i < cellCount; i++) {
+        cells[i].addEventListener('click', function(e) {
+            e.target.style.backgroundColor = colorSelected;
+        });
+    }
 }
 
 function clearAll(){
