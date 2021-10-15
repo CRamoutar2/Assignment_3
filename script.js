@@ -1,5 +1,5 @@
 let numRows = 0;
-let numCols = 0;
+let numCols = 1;
 let colorSelected; 
 
 const grid = document.getElementById("grid");
@@ -9,22 +9,34 @@ let cells = document.getElementsByClassName("gridCells");
 //Add a row
 function addR() {
     numRows++;
-    if(numCols === 0){
-        addC();
-    }
     let row = document.createElement("tr");
-    alert("Clicked Add Row")
+    console.log("Clicked Add Row");
     grid.appendChild(row).className = "gridRows";
+    if (numCols === 1) {
+        for (let i = 0; i < numCols; i++) {
+            let cell = document.createElement("th");
+            rows[i].appendChild(cell).className = "gridCells";
+        }
+    }
+    else {
+        for (let i = 0; i < numCols; i++) {
+            let cell = document.createElement("th");
+            row.appendChild(cell).className = "gridCells";
+            grid.appendChild(row);
+        }
+    }
 }
 
 //Add a column
 function addC() {
     numCols++;
-    if(numRows === 0){
+    console.log(numCols);
+    if (numRows === 0){
         addR();
+        console.log("row add");
     }
-    alert("Clicked Add Col")
-    for(let i = 0; i < numRows; i++){
+    console.log("Clicked Add Col");
+    for(let i = 0; i < numCols; i++){
         let cell = document.createElement("th");
         rows[i].appendChild(cell).className = "gridCells";
     }
@@ -32,12 +44,12 @@ function addC() {
 
 //Remove a row
 function removeR() {
-    alert("Clicked Remove Row")
+    console.log("Clicked Remove Row")
 }
 
 //Remove a column
 function removeC() {
-    alert("Clicked Remove Col")
+    console.log("Clicked Remove Col")
 }
 
 //sets global var for selected color
@@ -47,13 +59,13 @@ function selected(){
 }
 
 function fill(){
-    alert("Clicked Fill All")
+    console.log("Clicked Fill All")
 }
 
 function clearAll(){
-    alert("Clicked Clear All")
+    console.log("Clicked Clear All")
 }
 
 function fillU(){
-    alert("Clicked Fill All Uncolored")
+    console.log("Clicked Fill All Uncolored")
 }
