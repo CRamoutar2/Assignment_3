@@ -34,6 +34,42 @@ function addC() {
             let cell = document.createElement("th");
             rows[i].appendChild(cell).className = "gridCells";
         }
+let numRows = 0;
+let numCols = 1;
+let colorSelected; 
+
+const grid = document.getElementById("grid");
+let rows = document.getElementsByClassName("gridRows");
+let cells = document.getElementsByClassName("gridCells");
+
+//Add a row
+function addR() {
+    numRows++;
+    let row = document.createElement("tr");
+    grid.appendChild(row).className = "gridRows";
+    if (numCols === 0) {
+        addC();
+    }
+    else {
+        for (let i = 0; i < numCols; i++) {
+            let cell = document.createElement("th");
+            row.appendChild(cell).className = "gridCells";
+            grid.appendChild(row);
+        }
+    }
+}
+
+//Add a column
+function addC() {
+    if (numRows === 0){
+        addR();
+    }
+    else {
+        numCols++;
+        for(let i = 0; i < numRows; i++){
+            let cell = document.createElement("th");
+            rows[i].appendChild(cell).className = "gridCells";
+        }
     }
 }
 
