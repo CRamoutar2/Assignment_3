@@ -53,8 +53,7 @@ function removeR() {
 function removeC() {
     console.log("Clicked Remove Col");
     for (let i = 0; i < numRows; i++) {
-        grid.rows[i].removeChild(select.lastChild);
-        // grid.rows[i].removeChild(rows[i].lastChild);
+        rows[i].removeChild(rows[i].lastChild);
     }
     numCols--;
 }
