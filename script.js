@@ -42,16 +42,24 @@ function addC() {
 
 //Remove a row
 function removeR() {
-    grid.removeChild(grid.lastChild);
-    numRows--;
+    if (numRows != 0)
+    {
+        console.log("Clicked Remove Row");
+        grid.removeChild(grid.lastChild);
+        numRows--;
+    }
 }
 
 //Remove a column
 function removeC() {
-    for (let i = 0; i < numRows; i++) {
-        rows[i].removeChild(rows[i].lastChild);
+    if (numCOls != 0)
+    {
+        console.log("Clicked Remove Col");
+        for (let i = 0; i < numRows; i++) {
+            rows[i].removeChild(rows[i].lastChild);
+        }
+        numCols--;
     }
-    numCols--;
 }
 
 //sets global var for selected color
