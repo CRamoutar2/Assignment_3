@@ -81,5 +81,11 @@ function clearAll(){
 }
 
 function fillU(){
+    let cellCount = document.querySelectorAll(".gridCells").length;
+    for(let i = 0; i < cellCount; i++){
+        if(cells[i].style.backgroundColor === ""){
+            cells[i].style.backgroundColor = colorSelected;
+        }
+    }
     console.log("Clicked Fill All Uncolored")
 }
