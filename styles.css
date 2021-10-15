@@ -1,23 +1,9 @@
 .gridCells {
     height: 50px;
     width: 50px;
-    /* background-color: white; */
-    border: 2px solid red;
+    background-color: white;
+    border: 2px solid black;
     display: inline-block;
-    /* justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: row; */
     margin: 2px;
     cursor: pointer;
-}
-
-.gridRows {
-    padding: 4px;
-    height: auto;
-    width: 500px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: row;
-    border: 1px solid blue;
 }
