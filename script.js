@@ -15,7 +15,7 @@ function addR() {
     if (numCols === 1) {
         for (let i = 0; i < numCols; i++) {
             let cell = document.createElement("th");
-            rows[i].appendChild(cell).className = "gridCells";
+            grid.lastChild.appendChild(cell).className = "gridCells";
         }
     }
     else {
@@ -29,16 +29,17 @@ function addR() {
 
 //Add a column
 function addC() {
-    numCols++;
     console.log(numCols);
     if (numRows === 0){
         addR();
         console.log("row add");
     }
-    console.log("Clicked Add Col");
-    for(let i = 0; i < numCols; i++){
-        let cell = document.createElement("th");
-        rows[i].appendChild(cell).className = "gridCells";
+    else {
+        numCols++;
+        for(let i = 0; i < numCols; i++){
+            let cell = document.createElement("th");
+            rows[i].appendChild(cell).className = "gridCells";
+        }
     }
 }
 
@@ -53,7 +54,7 @@ function removeR() {
 function removeC() {
     console.log("Clicked Remove Col");
     for (let i = 0; i < numRows; i++) {
-        rows[i].removeChild(select.lastChild);
+        grid.rows[i].removeChild(select.lastChild);
     }
     numCols--;
 }
