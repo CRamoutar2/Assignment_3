@@ -6,5 +6,5 @@ Assignment 3</br>
 <li>David Guyot</li>
 <li>Isabel Abonitalla</li>
 </ul>
-<br>
+
 [Link to Webpage](https://cramoutar2.github.io/Assignment_3/)
