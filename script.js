@@ -44,7 +44,9 @@ function addC() {
 
 //Remove a row
 function removeR() {
-    console.log("Clicked Remove Row")
+    console.log("Clicked Remove Row");
+    grid.removeChild(grid.lastChild);
+    numRows--;
 }
 
 //Remove a column
