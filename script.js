@@ -75,7 +75,7 @@ function fill(){
 function clearAll(){
     let cellCount = document.querySelectorAll(".gridCells").length;
     for (let i = 0; i < cellCount; i++) {
-        cells[i].style.backgroundColor = 'white';
+        cells[i].style.backgroundColor = "";
     }
     console.log("Clicked Clear All")
 }
